@@ -1,0 +1,27 @@
+# Фронт TicketHub. Щоб підняти весь проєкт однією командою, додайте сервіс `web`
+# у docker-compose.yml бекенду (там уже є `api` і база) або вкажіть образ бекенду нижче.
+services:
+  web:
+    build: .
+    ports:
+      - '8081:80'
+    environment:
+      BACKEND_URL: http://api:8080
+    depends_on:
+      - api
+
+  api:
+    # образ TicketHub API з репозиторію бекенду
+    image: ${TICKETHUB_API_IMAGE:-tickethub-api:latest}
+    expose:
+      - '8080'
+
+  # Демо без бекенду: docker compose --profile demo up web-demo → http://localhost:8082
+  web-demo:
+    profiles: [demo]
+    build:
+      context: .
+      args:
+        VITE_USE_MOCKS: 'true'
+    ports:
+      - '8082:80'

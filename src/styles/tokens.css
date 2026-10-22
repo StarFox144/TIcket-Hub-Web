@@ -1,0 +1,40 @@
+/*
+ * Дизайн-токени TicketHub: «темний зал з червоними оксамитовими кріслами».
+ * Кольори — RGB-канали, щоб Tailwind міг додавати прозорість (bg-accent/20).
+ */
+:root {
+  --c-bg: 11 11 13; /* #0B0B0D */
+  --c-surface: 22 22 26; /* #16161A */
+  --c-surface-raised: 31 31 36; /* #1F1F24 */
+
+  --c-accent: 200 16 46; /* #C8102E */
+  --c-accent-hover: 224 30 60; /* #E01E3C */
+  --c-accent-dark: 122 10 28; /* #7A0A1C */
+  --c-accent-text: 255 122 140; /* #FF7A8C — червоний для дрібного тексту, контраст ≥ 4.5:1 */
+
+  --c-text: 245 241 234; /* #F5F1EA */
+  --c-text-muted: 154 154 163; /* #9A9AA3 */
+  --c-gold: 212 175 55; /* #D4AF37 */
+
+  --c-seat-free: 42 42 48; /* #2A2A30 */
+  --c-seat-comfort: 122 10 28; /* #7A0A1C */
+  --c-seat-taken: 26 26 30; /* #1A1A1E */
+
+  --c-success: 111 207 151; /* #6FCF97 */
+  --c-danger: 255 107 125; /* #FF6B7D — читається на чорному */
+
+  --r-sm: 12px;
+  --r-md: 16px;
+  --r-lg: 20px;
+  --r-pill: 999px;
+
+  --glow: 0 8px 28px rgba(200, 16, 46, 0.35);
+  --glow-sm: 0 4px 14px rgba(200, 16, 46, 0.35);
+  --shadow-card: 0 12px 32px rgba(0, 0, 0, 0.45);
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur: 250ms;
+
+  --header-h: 68px;
+  --bottom-nav-h: 64px;
+}

@@ -1,0 +1,70 @@
+@import './tokens.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: dark;
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-bg font-sans text-text antialiased;
+    font-size: 16px;
+    min-height: 100dvh;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-display font-semibold tracking-tight;
+  }
+  h1 {
+    font-size: clamp(28px, 4vw, 40px);
+    line-height: 1.1;
+  }
+  h2 {
+    font-size: clamp(22px, 3vw, 28px);
+    line-height: 1.2;
+  }
+  h3 {
+    font-size: 20px;
+  }
+  :focus-visible {
+    outline: 2px solid rgb(var(--c-accent-hover));
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+  ::selection {
+    background: rgb(var(--c-accent) / 0.6);
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-container px-4 md:px-6;
+  }
+  .num {
+    font-variant-numeric: tabular-nums;
+    @apply font-bold;
+  }
+  .field {
+    @apply w-full rounded-md border border-text/10 bg-raised px-4 py-3 text-text placeholder:text-muted
+      transition-colors duration-200 ease-out hover:border-text/20 focus:border-accent focus:outline-none;
+  }
+  .label {
+    @apply mb-1.5 block text-sm font-semibold text-muted;
+  }
+  .sr-only-focusable:not(:focus) {
+    @apply sr-only;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
